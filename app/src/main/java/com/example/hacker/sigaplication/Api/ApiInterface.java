@@ -14,6 +14,9 @@ public interface ApiInterface {
     @GET("Comments")
     Call<List<CommentsModel>> getComments();
 
+    @GET("PlaceVisits")
+    Call<List<PlaceModel>> getCommentsplaces();
+
     @POST("Comments")
     Call<CommentsModel> PostComments(@Body CommentsModel commentsModel);
 

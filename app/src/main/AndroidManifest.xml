@@ -19,11 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -40,15 +36,17 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Activitys.CommentsGet"
             android:label="@string/title_activity_comments_get"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Activitys.PostPlace"
-            android:label="@string/title_activity_post_place"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

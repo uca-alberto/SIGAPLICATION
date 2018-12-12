@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.hacker.sigaplication.Activitys.CommentsGet;
-import com.example.hacker.sigaplication.Activitys.PostPlace;
 
 public class MainActivity extends AppCompatActivity {
     Button Maps;
@@ -34,12 +33,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,CommentsGet.class));
             }
         });
-        places.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,PostPlace.class));
-            }
-        });
-
     }
 }

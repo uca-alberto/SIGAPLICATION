@@ -26,6 +26,7 @@ import android.widget.Toast;
 import com.example.hacker.sigaplication.Activitys.CommentsGet;
 import com.example.hacker.sigaplication.Api.Api;
 import com.example.hacker.sigaplication.Modals.CommentModal;
+import com.example.hacker.sigaplication.Modals.CommentPlaces;
 import com.example.hacker.sigaplication.Model.PlaceModel;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
@@ -67,6 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location mlastLocation;
     ImageButton Modal;
     ImageButton Modal21;
+    ImageButton Moda2;
 
     private static int UPDATE_INTERVAL = 5000;
     private static int FATEST_INTERVAL = 3000;
@@ -88,6 +90,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Modal = findViewById(R.id.modal);
         Modal21=findViewById(R.id.moda2l);
+        Moda2 = findViewById(R.id.moda22);
+        Moda2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MapsActivity.this,CommentsGet.class));
+            }
+        });
         names = Build.BOARD;
         Modal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,8 +108,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Modal21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MapsActivity.this,CommentsGet.class));
-                finish();
+                //startActivity(new Intent(MapsActivity.this,CommentsGet.class));
+                CommentPlaces commentPlaces = new CommentPlaces();
+                commentPlaces.show(getSupportFragmentManager(),"Example");
+                //finish();
             }
         });
 
@@ -264,7 +275,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent intent = new Intent(this,MapsActivity.class);
         PendingIntent contentIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_IMMUTABLE);
         builder.setContentIntent(contentIntent);
-        Notification notification = builder.build();
+        Notification notification = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN) {
+            notification = builder.build();
+        }
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
          notification.defaults |= Notification.DEFAULT_SOUND;
          notification.defaults |= Notification.DEFAULT_VIBRATE;

@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.example.hacker.sigaplication"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:27.1.0'
+
+    //implementacion recyclerview
+    implementation 'com.android.support:recyclerview-v7:27.0.1'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+
+    //implementacion para archivos json
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    //implementacion de archivos de modales y zoom en maps
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.h6ah4i.android.widget.verticalseekbar:verticalseekbar:0.7.2'
+
+    //implementacion para comunicacion con firebase
+    implementation 'com.firebase:geofire-android:2.1.2'
+    implementation 'com.google.firebase:firebase-database:10.2.0'
+
+    //Implementaciones para que funcione el activity maps
+    implementation 'com.google.android.gms:play-services:10.2.0'
+    implementation 'com.google.android.gms:play-services-maps:10.2.0'
+
+    //Implementacion ya definidas
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //implementacion para que no error de codificaciones
+    implementation 'com.android.support:multidex:1.0.3'
+}
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SIGAPLICATION</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_create_comments">CreateComments</string>
+    <string name="title_activity_comments_get">CommentsGet</string>
+    <string name="title_activity_post_place">PostPlace</string>
+</resources>

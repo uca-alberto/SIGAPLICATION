@@ -231,11 +231,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng dangerous_area = new LatLng(11.9184 ,-86.14467);
-        mMap.addCircle(new CircleOptions().center(dangerous_area).radius(500)
-        .strokeColor(Color.BLUE).fillColor(0x220000FF).strokeWidth(5.0f));
+        LatLng dangerous_area = new LatLng(12.1106413 ,-86.2327954);
+        mMap.addCircle(new CircleOptions().center(dangerous_area).radius(400)
+        .strokeColor(Color.BLUE).fillColor(0x220000FF).strokeWidth(4.0f));
 
-        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(dangerous_area.latitude,dangerous_area.longitude),5.0f);
+        GeoQuery geoQuery = geoFire.queryAtLocation(new GeoLocation(dangerous_area.latitude,dangerous_area.longitude),4.0f);
         geoQuery.addGeoQueryEventListener(new GeoQueryEventListener() {
             @Override
             public void onKeyEntered(String key, GeoLocation location) {

@@ -18,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Maps = findViewById(R.id.ButonMaps);
-        Comentarios = findViewById(R.id.ButtonComentarios);
-        places = findViewById(R.id.ButtonPlaces);
         Maps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -27,11 +25,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Comentarios.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,CommentsGet.class));
-            }
-        });
     }
 }

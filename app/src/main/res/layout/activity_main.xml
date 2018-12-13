@@ -16,22 +16,4 @@
         android:id="@+id/ButonMaps"
         android:text="MAPS"
         />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="Comentarios"
-        android:id="@+id/ButtonComentarios"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="Comentarios"
-        android:id="@+id/ButtonPlaces"
-        />
 </android.support.v7.widget.LinearLayoutCompat>
